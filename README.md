@@ -7,31 +7,10 @@
 **Herzlich Willkommen – und schön, dass du dabei bist!**  
 In diesem Repository findest du während des Workshops den Quelltext unserer Beispielanwendung.
 
-# 💬 Chat
-
-Während des Workshops verwenden wir einen [Chat über den Dienst Gitter](https://gitter.im/angular-schule/2020-06-duelmen).
-Hier können wir Codeschnipsel, Links und andere Sachen teilen. Folge einfach diesem Link:
-
-[<img src="https://badges.gitter.im/angular-schule/2020-06-duelmen.svg" width="160">](https://gitter.im/angular-schule/2020-06-duelmen)
-
-Um die Nachrichten lesen zu können, musst du nicht angemeldet sein.
-Sofern du einen Account bei Gitlab, GitHub oder Twitter hast, kannst du dich über einen der Dienste einloggen und an der Diskussion beteiligen. Eine Beteiligung am Chat ist freiwillig, und es ist für den Kurs nicht notwendig, dass du dich aktiv an der Diskussion beteiligst.  
-
 # ✅ Vorbereitung
 
 Damit wir gleich durchstarten können, solltest Du ein paar Vorbereitungen treffen.  
 Die gesamte Installation wird rund 30 Minuten dauern. 
-
-## Arbeitsplatz einrichten
-
-Für die Teilnahme am Workshop benötigst du einen Computer mit **Webcam und Mikrofon**.
-Bitte verwende nach Möglichkeit einen **zweiten Bildschirm**, damit du die Videokonferenz und den Editor gleichzeitig sehen kannst.
-Falls du keinen zusätzlichen Bildschirm hast, funktioniert auch ein zweites Gerät wie ein **zweiter Laptop oder ein Tablet**.
-
-Bitte sorge für eine ruhige Umgebung ohne viele Störgeräusche.
-Wir empfehlen, Kopfhörer zu verwenden, um Echos zu vermeiden.
-Falls vorhanden, nutze bitte ein Headset und nicht das eingebaute Laptopmikrofon.
-Wir empfehlen dir außerdem, im Meeting das Audio stummzuschalten, wenn du gerade nicht sprichst.
 
 ## Benötigte Software
 
