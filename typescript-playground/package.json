@@ -1,13 +1,15 @@
 {
   "name": "typescript-playground",
   "version": "1.0.0",
-  "description": "",
+  "description": "mein TypeScript Projekt",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "info": "tsc info",
+    "build": "tsc",
+    "start": "npm run build && node main.js"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Johannes Hoppe",
+  "license": "MIT",
   "dependencies": {
     "typescript": "^3.9.5"
   }
