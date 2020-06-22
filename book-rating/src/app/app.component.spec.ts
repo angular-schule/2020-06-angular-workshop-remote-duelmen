@@ -18,6 +18,8 @@ describe('AppComponent', () => {
       ],
       schemas: [NO_ERRORS_SCHEMA] // ---> Shallow Unit Test
     }).compileComponents();
+
+    // setTimeout(() => console.log('Hallo World'), 4500);
   }));
 
   it(`should have as title 'Book Rating'`, () => {
