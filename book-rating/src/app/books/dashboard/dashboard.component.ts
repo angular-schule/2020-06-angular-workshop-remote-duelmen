@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation, ChangeDetectionStrategy } from '@angular/core';
 import { Book } from '../shared/book';
 import { BookRatingService } from '../shared/book-rating.service';
 
@@ -6,7 +6,9 @@ import { BookRatingService } from '../shared/book-rating.service';
   selector: 'br-dashboard',
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.scss'],
-  // encapsulation: ViewEncapsulation.None
+  // encapsulation: ViewEncapsulation.None,
+  // Vorsicht: hier werden wir einen Bug bekommen!!
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class DashboardComponent implements OnInit {
 
