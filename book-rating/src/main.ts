@@ -8,5 +8,7 @@ if (environment.production) {
   enableProdMode();
 }
 
-platformBrowserDynamic().bootstrapModule(AppModule)
+platformBrowserDynamic()
+  // TODO: load translations BEFORE starting the application
+  .bootstrapModule(AppModule)
   .catch(err => console.error(err));

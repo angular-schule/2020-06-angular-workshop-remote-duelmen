@@ -6,7 +6,7 @@
       class="img-thumbnail float-right">
 
     <div class="card-title">
-      <h2>{{ book?.title }}
+      <h2>{{ book?.title }} ({{ book.price | currency:'EUR' }})
         <!-- <span class="badge badge-secondary">
           {{ '⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️' | slice: 0:book?.rating*2 }}
         </span>
