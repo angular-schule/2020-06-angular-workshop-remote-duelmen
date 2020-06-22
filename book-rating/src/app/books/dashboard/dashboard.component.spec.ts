@@ -3,12 +3,18 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { DashboardComponent } from './dashboard.component';
 import { BookComponent } from '../book/book.component';
 import { BookRatingService } from '../shared/book-rating.service';
+import { Book } from '../shared/book';
 
 describe('DashboardComponent', () => {
   let component: DashboardComponent;
   let fixture: ComponentFixture<DashboardComponent>;
 
   beforeEach(async(() => {
+
+    const ratingMock = {
+      rateUp: book => book
+    };
+
     TestBed.configureTestingModule({
       declarations: [
         DashboardComponent,
@@ -16,7 +22,7 @@ describe('DashboardComponent', () => {
       ],
       providers: [{
         provide: BookRatingService,
-        useValue: 'Nööö!'
+        useValue: ratingMock
       }]
     })
     .compileComponents();
@@ -28,7 +34,15 @@ describe('DashboardComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
+  it('doRateUp() should delegate all calls to BookRatingService', () => {
+
+    const rs = TestBed.inject(BookRatingService);
+    spyOn(rs, 'rateUp').and.callThrough();
+
+    const testBook = { isbn: '000' } as Book;
+    component.doRateUp(testBook);
+
+    // expect(rs.rateUp).toHaveBeenCalled();
+    expect(rs.rateUp).toHaveBeenCalledWith(testBook);
   });
 });
