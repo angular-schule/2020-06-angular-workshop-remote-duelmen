@@ -14,7 +14,8 @@ export class DashboardComponent implements OnInit {
 
   books: Book[];
 
-  constructor(private br: BookRatingService) { }
+  constructor(private br: BookRatingService) {
+  }
 
   ngOnInit(): void {
     this.books = [{
