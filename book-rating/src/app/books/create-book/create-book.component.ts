@@ -18,4 +18,13 @@ export class CreateBookComponent {
     // rating --> decide for a 3rd party lib first!
   });
 
+  isInvalid(name: string) {
+    const control = this.bookForm.get(name);
+    return control.touched && control.invalid;
+  }
+
+  // hands on --> name: 'isbn'    errorCode: 'required' | 'minlength'
+  hasError(name: string, errorCode: string) {
+
+  }
 }

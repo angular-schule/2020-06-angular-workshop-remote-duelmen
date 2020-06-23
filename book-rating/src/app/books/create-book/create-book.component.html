@@ -3,6 +3,18 @@
   <div class="form-group">
     <label for="isbn">ISBN</label>
     <input formControlName="isbn" type="text" id="isbn" class="form-control">
+
+    <div *ngIf="isInvalid('isbn')" class="feedback-error">
+      Error: Please enter a valid ISBN!
+    </div>
+
+    <div class="feedback-error">
+      Error: Please enter any text.
+    </div>
+
+    <div class="feedback-error">
+      Error: Please enter at least 3 characters.
+    </div>
   </div>
 
   <div class="form-group">
