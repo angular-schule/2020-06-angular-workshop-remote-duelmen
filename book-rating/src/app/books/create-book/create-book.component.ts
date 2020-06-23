@@ -25,6 +25,7 @@ export class CreateBookComponent {
 
   // hands on --> name: 'isbn'    errorCode: 'required' | 'minlength'
   hasError(name: string, errorCode: string) {
-
+    const control = this.bookForm.get(name);
+    return control.touched && control.hasError(errorCode);
   }
 }

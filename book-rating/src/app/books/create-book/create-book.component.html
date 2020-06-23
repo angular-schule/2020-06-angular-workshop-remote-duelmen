@@ -8,11 +8,13 @@
       Error: Please enter a valid ISBN!
     </div>
 
-    <div class="feedback-error">
+    <div *ngIf="hasError('isbn', 'required')"
+      class="feedback-error">
       Error: Please enter any text.
     </div>
 
-    <div class="feedback-error">
+    <div *ngIf="hasError('isbn', 'minlength')"
+      class="feedback-error">
       Error: Please enter at least 3 characters.
     </div>
   </div>
