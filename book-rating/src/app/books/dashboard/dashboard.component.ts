@@ -13,6 +13,7 @@ import { BookRatingService } from '../shared/book-rating.service';
 export class DashboardComponent implements OnInit {
 
   books: Book[];
+  currentDate = new Date();
 
   constructor(private br: BookRatingService) {
   }
