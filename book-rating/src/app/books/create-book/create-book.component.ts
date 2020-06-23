@@ -28,4 +28,21 @@ export class CreateBookComponent {
     const control = this.bookForm.get(name);
     return control.touched && control.hasError(errorCode);
   }
+
+  submitForm() {
+    const newBook = {
+      ...this.bookForm.value,
+      rating: 1,
+      price: 10
+    };
+
+    // Hands on
+    // 1. Erzeuge ein Event mit dem Namen "create"
+    // 2. Emitte das Event
+    // 3. Subscribe auf das Event im HTML des Dashboards
+    // 4. Füge da neue Buch dem Buch-Array hinzu,
+    //    beachte das Prinzip der Unveränderbarkeit
+
+    this.bookForm.reset();
+  }
 }
