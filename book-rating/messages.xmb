@@ -1,0 +1,4 @@
+<messagebundle>
+  <msg id="WelcomeMessage"> You are can rate your books here. </msg>
+  <msg id="BookRating">Book Rating</msg>
+</messagebundle>
