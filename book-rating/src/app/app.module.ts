@@ -21,6 +21,7 @@ import { registerLocaleData } from '@angular/common';
     BrowserModule,
     AppRoutingModule,
     BooksModule,
+    // AppRoutingEndModule
     HttpClientModule
   ],
   providers: [{
@@ -32,6 +33,6 @@ import { registerLocaleData } from '@angular/common';
 export class AppModule {
   constructor() {
     registerLocaleData(localeDe);
-    console.table(localeDe);
+    // console.table(localeDe);
   }
 }
