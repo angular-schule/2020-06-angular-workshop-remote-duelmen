@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewEncapsulation, ChangeDetectionStrategy } from '@angular/core';
 import { Book } from '../shared/book';
 import { BookRatingService } from '../shared/book-rating.service';
+import { BookStoreService } from '../shared/book-store.service';
 
 @Component({
   selector: 'br-dashboard',
@@ -8,38 +9,18 @@ import { BookRatingService } from '../shared/book-rating.service';
   styleUrls: ['./dashboard.component.scss'],
   // encapsulation: ViewEncapsulation.None,
   // Vorsicht: hier werden wir einen Bug bekommen!!
-  changeDetection: ChangeDetectionStrategy.OnPush
+  // changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class DashboardComponent implements OnInit {
 
-  books: Book[];
+  books: Book[] = [];
   currentDate = new Date();
 
-  constructor(private br: BookRatingService) {
+  constructor(private br: BookRatingService, private bs: BookStoreService) {
   }
 
   ngOnInit(): void {
-    this.books = [{
-      isbn: '222',
-      title: 'Angular',
-      description: 'Tolles Buch!',
-      rating: 5,
-      price: 36.9
-    },
-    {
-      isbn: '333',
-      title: 'AngularJS',
-      description: 'Altes Buch',
-      rating: 3,
-      price: 10
-    },
-    {
-      isbn: '444',
-      title: 'React',
-      description: 'Olles Buch',
-      rating: 1,
-      price: 1.22
-    }];
+    this.bs.getBooks().subscribe(books => this.books = books);
   }
 
   doRateDown(book: Book) {

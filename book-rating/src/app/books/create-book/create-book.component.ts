@@ -12,6 +12,12 @@ export class CreateBookComponent {
   @Output()
   create = new EventEmitter<Book>();
 
+  constructor() {
+    this.bookForm.get('isbn').valueChanges.subscribe(isbn => {
+      // this.isbnChanged.emit(isbn);
+    });
+  }
+
   bookForm = new FormGroup({
     isbn: new FormControl('', [
       Validators.required,
