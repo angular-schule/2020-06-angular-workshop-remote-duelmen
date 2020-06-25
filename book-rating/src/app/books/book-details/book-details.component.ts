@@ -1,6 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { of, timer, Subscription, Subject } from 'rxjs';
+import { of, timer, Subscription, Subject, Observable } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 
 @Component({
@@ -31,9 +31,19 @@ export class BookDetailsComponent implements OnInit, OnDestroy {
     };
 
     // 2. Baustein: Observable
-    const observable1 = of('😎', '😇', '🤓');
+    // const observable1 = of('😎', '😇', '🤓');
 
-    observable1.subscribe(observer);
+    const observable2 = new Observable(subscriber => {
+      subscriber.next(1);
+      setTimeout(() => subscriber.next(2), 1000);
+      setTimeout(() => subscriber.next(3), 2000);
+      subscriber.next(4);
+
+      setTimeout(() => subscriber.complete(), 3000);
+    });
+
+    // 3. Baustein: Subscription
+    observable2.subscribe(observer);
 
 
     // --------------------------
