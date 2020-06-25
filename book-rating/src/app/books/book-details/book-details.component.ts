@@ -32,12 +32,9 @@ export class BookDetailsComponent implements OnInit, OnDestroy {
 
     // 2. Baustein: Observable
     const observable1 = of('😎', '😇', '🤓');
-    const observable2 = timer(0, 500);
 
-    observable2.pipe(takeUntil(this.destroy$)).subscribe(observer);
-    observable2.pipe(takeUntil(this.destroy$)).subscribe(observer);
+    observable1.subscribe(observer);
 
-    // subscription.unsubscribe();
 
     // --------------------------
   }
