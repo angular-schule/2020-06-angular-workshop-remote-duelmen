@@ -11,6 +11,8 @@ export class BookDetailsComponent implements OnInit, OnDestroy {
 
   isbn: string;
   sub: Subscription;
+  sub2: Subscription;
+
 
   constructor(private route: ActivatedRoute) { }
 
@@ -33,6 +35,8 @@ export class BookDetailsComponent implements OnInit, OnDestroy {
     const observable2 = timer(0, 500);
 
     this.sub = observable2.subscribe(observer);
+    this.sub2 = observable2.subscribe(observer);
+
     // subscription.unsubscribe();
 
     // --------------------------
@@ -40,6 +44,8 @@ export class BookDetailsComponent implements OnInit, OnDestroy {
 
   ngOnDestroy() {
     this.sub.unsubscribe();
+    this.sub2.unsubscribe();
+
   }
 
 }
