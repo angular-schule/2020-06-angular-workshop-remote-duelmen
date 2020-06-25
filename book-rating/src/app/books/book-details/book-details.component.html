@@ -1,6 +1,11 @@
-<h2>Book No {{ isbn$ | async }}</h2>
+<h2>Book
+  {{ (book$ | async)?.title }}
+  {{ (book$ | async)?.price }}
+</h2>
 
-<p>book-details works!</p>
+<p>
+  {{ (book$ | async)?.description }}
+</p>
 
 
 <a
