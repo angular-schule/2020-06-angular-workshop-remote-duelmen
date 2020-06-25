@@ -1,7 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { of, timer, Subscription, Subject, Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { map, filter, scan, reduce } from 'rxjs/operators';
 
 @Component({
   selector: 'br-book-details',
@@ -51,12 +51,11 @@ export class BookDetailsComponent implements OnInit {
 
     // 3. Baustein: Subscription
     const subscription = observable2.pipe(
+      // 4. Baustein: Operatoren
       map(x => x * 10),
-      // Hands On
-      // 1. Filter alle Murmeln heraus, die kleiner sind als 30 (neu: 30, 40, 50, 60... 70)
-      // 2. Gib einmal die Summe aller Zahlen aus
-      // 3. Optional: Gib genau so viele Emojis aus, wie die Zahl groß ist
-
+      filter(x => x >= 30),
+      reduce((a, b) => a + b),
+      map(x => '🍕'.repeat(x)),
     ).subscribe(observer);
 
     setTimeout(() => subscription.unsubscribe(), 4000);
