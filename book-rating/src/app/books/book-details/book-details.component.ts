@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { of } from 'rxjs';
+import { of, timer } from 'rxjs';
 
 @Component({
   selector: 'br-book-details',
@@ -27,7 +27,12 @@ export class BookDetailsComponent implements OnInit {
       complete: () => console.log('COMPLETE!')
     };
 
-    of('😎', '😇', '🤓').subscribe(observer);
+    // 2. Baustein: Observable
+    const observable1 = of('😎', '😇', '🤓');
+    const observable2 = timer(0, 500);
+
+    const subscription = observable2.subscribe(observer);
+    // subscription.unsubscribe();
 
 
 
