@@ -8,14 +8,11 @@ import { map, filter, scan, reduce } from 'rxjs/operators';
   templateUrl: './book-details.component.html',
   styleUrls: ['./book-details.component.scss']
 })
-export class BookDetailsComponent implements OnInit {
+export class BookDetailsComponent {
 
-  isbn: string;
+  isbn$ = this.route.paramMap.pipe(
+    map(paramMap => paramMap.get('isbn'))
+  );
 
   constructor(private route: ActivatedRoute) { }
-
-  ngOnInit(): void {
-    this.route.paramMap
-      .subscribe(paramMap => this.isbn = paramMap.get('isbn'));
-  }
 }
