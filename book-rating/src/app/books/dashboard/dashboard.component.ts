@@ -15,16 +15,12 @@ import { loadBooks } from '../store/book.actions';
 })
 export class DashboardComponent implements OnInit {
 
-  //#region nur für Gregor :D
   books: Book[] = [];
   currentDate = new Date();
-  //#endregion
 
-  //#region constructors
   constructor(private store: Store) {
     this.store.dispatch(loadBooks());
   }
-  //#endregion
 
 
   ngOnInit(): void {
