@@ -15,3 +15,15 @@ export const loadBooksFailure = createAction(
   '[Book] Load Books Failure',
   props<{ error: HttpErrorResponse }>()
 );
+
+///
+
+export const loadSingleBook = createAction(
+  '[Book] Load Single Book',
+  props<{ isbn: string }>()
+);
+
+export const loadSingleBookSuccess = createAction(
+  '[Book] Load Singel Book Success',
+  props<{ data: Book }>()
+);

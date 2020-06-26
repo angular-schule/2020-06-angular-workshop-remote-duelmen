@@ -23,6 +23,18 @@ export class BookEffects {
     );
   });
 
+  loadSingleBook$ = createEffect(() => {
+    return this.actions$.pipe(
+
+      ofType(BookActions.loadSingleBook),
+      switchMap(({ isbn }) =>
+        this.bs.getSingleBook(isbn).pipe(
+          map(data => BookActions.loadSingleBookSuccess({ data })),
+        )
+      )
+    );
+  });
+
   constructor(private actions$: Actions, private bs: BookStoreService) {}
 
 }
