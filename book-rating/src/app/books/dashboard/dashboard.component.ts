@@ -2,20 +2,25 @@ import { Component, OnInit, ViewEncapsulation, ChangeDetectionStrategy } from '@
 import { Book } from '../shared/book';
 import { BookRatingService } from '../shared/book-rating.service';
 import { BookStoreService } from '../shared/book-store.service';
-import { Store } from '@ngrx/store';
+import { Store, select } from '@ngrx/store';
 import { loadBooks } from '../store/book.actions';
+import { selectBooks, selectBooksLoading, selectBookViaIsbn } from '../store/book.selectors';
 
 @Component({
   selector: 'br-dashboard',
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.scss'],
   // encapsulation: ViewEncapsulation.None,
-  // Vorsicht: hier werden wir einen Bug bekommen!!
-  // changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class DashboardComponent implements OnInit {
 
-  books: Book[] = [];
+  books$ = this.store.pipe(select(selectBooks));
+  loading$ = this.store.pipe(select(selectBooksLoading));
+
+  // nur zur Info
+  specialBook$ = this.store.pipe(select(selectBookViaIsbn, { isbn: '42' }));
+
   currentDate = new Date();
 
   constructor(private store: Store) {

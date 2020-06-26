@@ -3,21 +3,13 @@
 ></br-create-book>
 
 <br-book
-  *ngFor="let b of books"
+  *ngFor="let b of books$ | async"
   [book]="b"
   (rateDown)="doRateDown($event)"
   (rateUp)="doRateUp($event)">
 </br-book>
 
-<!-- <hr>
+<h3 *ngIf="loading$ | async">Lade Bücher</h3>
 
-<div *ngFor="let b of books; even as e"
-     [ngClass]="{ gray: e }">
-  <br-book
-    [book]="b">
-  </br-book>
-</div> -->
-
-
-Anzahl der Bücher: {{ books.length }}<br>
+Anzahl der Bücher: {{ (books$ | async).length }}<br>
 Aktuelles Datum: {{ currentDate | date }}
